@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profolio</title>
+    <title>Chijioke Emmanuel Nnekwelugo - Profolio</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -135,11 +135,256 @@
       </div>
  
     </div>
+ </section>
+
+
+ <section class="projects">
+    <div class="section-header">
+      <h2>My <span>Projects</span></h2>
+      <div class="underline"></div>
+      <p class="section-subtitle">Things I'm building next/Soon</p>
+    </div>
+
+    <div class="projects-grid">
+ 
+      
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img
+            src="./images/travelling website template pic.jpg"
+            alt="Screenshot of Travel Agency Website project"
+          />
+          <!-- Hover overlay with links -->
+          <div class="project-overlay">
+            <a href="#" class="overlay-btn"><i class="fa-solid fa-eye"></i> Live Demo</a>
+            <a href="#" class="overlay-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-status coming-soon">Coming Soon</span>
+          <h3>Travel Agency Website</h3>
+          <p>
+            A fully responsive travel agency landing page featuring destination
+            cards, a booking form, and smooth scroll navigation. Built with
+            semantic HTML and CSS Grid.
+          </p>
+          <!-- Technology tags -->
+          <div class="tech-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Grid</span>
+            <span>Flexbox</span>
+          </div>
+        </div>
+      </div>
+            <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img
+            src="./images/Resturant website template pic.jpg"
+            alt="Screenshot of Restaurant Website project"
+          />
+          <div class="project-overlay">
+            <a href="#" class="overlay-btn"><i class="fa-solid fa-eye"></i> Live Demo</a>
+            <a href="#" class="overlay-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-status in-progress">In Progress</span>
+          <h3>Restaurant Website</h3>
+          <p>
+            A modern restaurant website with a menu section, gallery, online
+            reservation form, and a sticky navigation bar. Focus on typography
+            and visual appeal.
+          </p>
+          <div class="tech-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Flexbox</span>
+            <span>Forms</span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Project 3 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img
+            src="./images/e comerce template pic (1).jpg"
+            alt="Screenshot of E-Commerce Store project"
+          />
+          <div class="project-overlay">
+            <a href="#" class="overlay-btn"><i class="fa-solid fa-eye"></i> Live Demo</a>
+            <a href="#" class="overlay-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-status upcoming">Upcoming</span>
+          <h3>E-Commerce Store</h3>
+          <p>
+            A product listing page for an online store with a shopping cart UI,
+            product filters, and a checkout form. Designed mobile-first with
+            full responsiveness.
+          </p>
+          <div class="tech-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Grid</span>
+          </div>
+        </div>
+      </div>
+
+</section>
+ <section class="contact">
+     <div class="section-header">
+      <h2>Get In <span>Touch</span></h2>
+      <div class="underline"></div>
+      <p class="section-subtitle">
+        Have a project in mind or just want to say hello? Send me a message!
+      </p>
+    </div>
+ 
+    <!-- Two-column grid: form + info -->
+    <div class="contact-grid">
+ 
+      <!-- LEFT: Contact Form -->
+      <div class="contact-form-wrapper">
+        <!-- 
+          <form> is the semantic HTML tag for forms.
+          action="#" means the form doesn't submit anywhere (no backend yet).
+          method="POST" is what we'd use in a real form.
+          novalidate lets us style our own validation later.
+        -->
+        <form class="contact-form" action="#" method="POST" novalidate>
+ 
+          <!-- Name Field -->
+          <div class="form-group">
+            <!-- 
+              <label> describes what the input is for.
+              for="name" links this label to the input with id="name".
+              This is important for accessibility.
+            -->
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+ 
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <!-- 
+              type="email" tells the browser this should be an email address.
+              Mobile keyboards will show @ symbol. Browser validates the format.
+            -->
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Cjesco@example.com"
+              required
+            />
+          </div>
+ 
+          <!-- Subject Field -->
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="What is this about?"
+            />
+          </div>
+ 
+          <!-- Message Field -->
+          <div class="form-group">
+            <label for="message">Message</label>
+            <!-- 
+              <textarea> is a multi-line text input.
+              rows="5" sets its default visible height.
+            -->
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+          </div>
+ 
+          <!-- Submit Button -->
+          <!-- type="submit" tells the browser this button submits the form -->
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+ 
+        </form>
+      </div>
+ 
+      <!-- RIGHT: Contact Info + Social Links -->
+      <div class="contact-info">
+ 
+        <h3>Let's Connect</h3>
+ 
+        <!-- Contact detail items -->
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <p>cjnnekwelugo@gmail.com</p>
+            </div>
+          </div>
+ 
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4>Location</h4>
+              <p>Enugu State, Nigeria</p>
+            </div>
+          </div>
+ 
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+           
+          </div>
+        </div>
+ 
+        <!-- Social Media Links -->
+        <div class="social-links">
+          <h4>Find me on:</h4>
+          <div class="social-icons">
+            <!-- Each link opens in a new tab: target="_blank" rel="noopener noreferrer" -->
+            <a href="https://github.com/cjnnekwelugo" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/chijioke-emmanuel-nnekwelugo-a717073a9" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://x.com/cjnnekwelugo" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://instagram.com/cjnnekwelugo" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+ 
+      </div>
+ 
+    </div>
  
   </section>
- <section class="projects">
+  <!-- End of Contact Section -->
+ 
+
 
  </section>
- 
 </body>
 </html>
