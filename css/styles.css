@@ -76,13 +76,14 @@ h1, h2, h3, h4 {
 }
 
 
- header{
+#home{
     position: sticky;
     top: 0%;
     z-index: 1000;
-     background-color: rgba(10, 10, 26, 0.95);
+     background-color: rgba(197, 197, 253, 0.95);
      backdrop-filter: blue;
      border-bottom: 1px solid blue;
+     
  }
 
 
@@ -93,11 +94,701 @@ h1, h2, h3, h4 {
     max-width: 1200px;
     margin: 0 auto;
  }
+ 
+ 
 
-
-.nav-logo a {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--color-white);
+.nav-logo span {
+  
 }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+ 
+.nav-links a {
+  color: rgb(29, 29, 104);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.4rem 0;
+  position: relative;
+  transition: color var(--transition);
+}
+ 
+.nav-links a:hover {
+  color: blue;
+}
+ 
+
+
+ 
+
+ 
+/* --- Hamburger Menu Button (visible only on mobile) ---
+   Three <span> tags become three horizontal lines. */
+.hamburger {
+  display: none;  /* Hidden on desktop — shown via media query on mobile */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+ 
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-white);
+  border-radius: 3px;
+  transition: all var(--transition);
+}
+ 
+/* When the hamburger is "active" (menu open), animate the lines
+   into an X shape using rotation */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;  /* Hide the middle line */
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+ 
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  padding: 2rem 5rem;
+}
+ 
+
+.hero-text h1 {
+  font-size: 300%;
+}
+
+.hero-text p {
+  font-size: 90%;
+  font-weight: 600;
+}
+ 
+
+.hero-buttons {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap; /* Wraps to next line on small screens */
+}
+.hero button {
+  background-color: rgb(144, 144, 238);
+  padding: 1rem 2rem ;
+  border-radius: 10%;
+
+}
+.hero button:hover{
+  background-color: #007acc;
+}
+
+ 
+.hero img {
+  width: 400px;
+  height: 340px;
+  border-radius: 100%; 
+  border: 5px solid var(--color-accent);
+  box-shadow: 0 0 40px rgba(81, 81, 175, 0.3);
+  animation: float 4s ease-in-out infinite;
+}
+ 
+/* @keyframes defines the animation steps.
+   "float" slowly moves the photo up and down in a loop. */
+@keyframes float {
+    0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+ 
+ 
+
+
+/* Grid container */
+.about {
+  padding: 40px;
+}
+.about h2{
+  display: flex;
+  justify-content: center;
+  font-size: 300%;
+}
+
+/* Grid container */
+.about-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 30px; /* Space between text and image */
+  align-items: center; /* Align items vertically */
+}
+
+/* Text styling */
+.about-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Image styling */
+.about img {
+   width: 500px;
+  height: 600px;
+  
+  border: 5px solid var(--color-accent);
+  box-shadow: 0 0 40px rgba(81, 81, 175, 0.3);
+  animation: float 4s ease-in-out infinite;
+}
+/* ================================================================
+   6. SKILLS SECTION
+   - CSS Grid: 4 columns on desktop
+   - Each card lifts on hover
+================================================================ */
+ 
+.skills {
+  padding: var(--space-xl) var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  top: 5rem;
+}
+.skills h2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 300%;
+}
+.section-header p {
+  align-items: center;
+  font-size: 100%;
+}
+ 
+/* 4-column grid that auto-adjusts */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* repeat(4, 1fr) = 4 equal-width columns */
+  gap: var(--space-md);
+}
+ 
+/* Individual skill card */
+.skill-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--space-md);
+  text-align: center;
+ 
+  /* Smooth transition for hover effect */
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+ 
+/* Hover state: lift the card and add a colored border glow */
+.skill-card:hover {
+  transform: translateY(-8px);   /* Move card up 8px */
+  box-shadow: 0 12px 30px rgba(233, 69, 96, 0.15);
+  border-color: var(--color-accent);
+}
+ 
+/* Skill icon size */
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+ 
+/* Individual icon colors (brand colors) */
+.html     { color: #e34c26; }  /* HTML5 orange */
+.css      { color: #264de4; }  /* CSS3 blue */
+.flexbox  { color: #38bdf8; }  /* Light blue */
+.grid     { color: #a78bfa; }  /* Purple */
+.git      { color: #f14e32; }  /* Git orange-red */
+.github   { color: #ffffff; }  /* White */
+.vscode   { color: #007acc; }  /* VS Code blue */
+.responsive { color: #34d399; }/* Green */
+ 
+.skill-card h3 {
+  color: var(--color-white);
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+ 
+.skill-card p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+ 
+ 
+/* ================================================================
+   7. PROJECTS SECTION
+   - Alternate background color
+   - CSS Grid: 2 columns on desktop
+   - Image overlay appears on card hover
+================================================================ */
+ 
+.projects {
+  background-color: var(--color-bg-alt);
+  padding: var(--space-xl) var(--space-md);
+}
+ 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  gap: var(--space-md);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+ 
+/* Individual project card */
+.project-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;   /* Clips the image so it doesn't spill outside the rounded corners */
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+ 
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+ 
+/* --- Project image area with hover overlay --- */
+.project-image {
+  position: relative;   /* Needed so the overlay can be positioned over the image */
+  overflow: hidden;
+}
+ 
+.project-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+ 
+  /* Smooth scale-up when hovered */
+  transition: transform var(--transition);
+}
+ 
+.project-card:hover .project-image img {
+  transform: scale(1.05); /* Zoom image very slightly */
+}
+ 
+/* Semi-transparent overlay that appears on hover */
+.project-overlay {
+  position: absolute;  /* Sits directly on top of the image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ 
+  /* Semi-transparent dark background */
+  background: rgba(10, 10, 26, 0.8);
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+ 
+  /* Hidden by default — opacity: 0 makes it invisible */
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+ 
+/* Reveal the overlay when the card is hovered */
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+ 
+/* Buttons inside the overlay */
+.overlay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color var(--transition);
+}
+ 
+.overlay-btn:hover {
+  background-color: #c73652; /* Darker accent */
+}
+ 
+/* --- Project info area (below the image) --- */
+.project-info {
+  padding: var(--space-md);
+}
+ 
+/* Status badge (Coming Soon, In Progress, etc.) */
+.project-status {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.coming-soon { background-color: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+.in-progress { background-color: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+.upcoming    { background-color: rgba(167, 139, 250, 0.15); color: #a78bfa; }
+.live        { background-color: rgba(52, 211, 153, 0.15); color: #34d399; }
+ 
+.project-info h3 {
+  color: var(--color-white);
+  font-size: 1.2rem;
+  margin-bottom: var(--space-xs);
+}
+ 
+.project-info p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+}
+ 
+/* Technology tags (small pill labels) */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+ 
+.tech-tags span {
+  padding: 4px 12px;
+  background-color: rgba(233, 69, 96, 0.1);
+  color: var(--color-accent);
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+ 
+ 
+/* ================================================================
+   8. CONTACT SECTION
+   - CSS Grid: form on left, info on right
+================================================================ */
+ 
+.contact {
+  padding: var(--space-xl) var(--space-md);
+}
+ 
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Form column slightly wider */
+  gap: var(--space-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start; /* Align to the top (not stretched) */
+}
+ 
+/* --- Contact Form --- */
+.contact-form-wrapper {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--space-lg);
+}
+ 
+/* Each label + input pair */
+.form-group {
+  margin-bottom: var(--space-md);
+}
+ 
+.form-group label {
+  display: block;           /* Label takes full width above the input */
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+ 
+/* Shared styles for <input> and <textarea> */
+.form-group input,
+.form-group textarea {
+  width: 100%;              /* Fill the form column */
+  padding: 0.85rem 1rem;
+  background-color: var(--color-bg-alt);
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition);
+ 
+  /* Removes the browser's default blue outline */
+  outline: none;
+}
+ 
+/* Placeholder text style */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-muted);
+}
+ 
+/* When the user clicks on a field (focus state), highlight the border */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-accent);
+}
+ 
+/* Disable the resize handle on the textarea (looks cleaner) */
+.form-group textarea {
+  resize: vertical;  /* Allow only vertical resize */
+  min-height: 140px;
+}
+ 
+/* --- Contact Info Side --- */
+.contact-info h3 {
+  font-size: 1.8rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+ 
+.contact-info > p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+ 
+/* Individual contact detail row (icon + text) */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+ 
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+ 
+/* Circular icon container */
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(233, 69, 96, 0.1);
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+ 
+.contact-item h4 {
+  color: var(--color-white);
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+ 
+.contact-item p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+ 
+/* Social links section */
+.social-links h4 {
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+ 
+/* Row of circular social icon buttons */
+.social-icons {
+  display: flex;
+  gap: var(--space-sm);
+}
+ 
+.social-icons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  transition: all var(--transition);
+}
+ 
+/* On hover: fill with accent color and lift */
+.social-icons a:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+  transform: translateY(-4px);
+}
+ 
+ 
+/* ================================================================
+   9. FOOTER
+   - Simple centered footer at the bottom of the page
+================================================================ */
+ 
+.footer {
+  background-color: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+ 
+.footer p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+ 
+.footer p strong {
+  color: var(--color-accent);
+}
+ 
+.footer-sub {
+  margin-top: var(--space-xs);
+  font-size: 0.8rem;
+}
+ 
+ 
+/* ================================================================
+   10. RESPONSIVE DESIGN — MEDIA QUERIES
+   We use three breakpoints as required by the project:
+   - Mobile:  up to 767px
+   - Tablet:  768px – 1023px
+   - Desktop: 1024px and above (our default styles above cover this)
+ 
+   @media rules apply styles ONLY when the condition is true.
+   max-width: 767px means "only apply these styles when the screen
+   is 767px wide OR SMALLER" (i.e., a phone).
+================================================================ */
+ 
+ 
+/* -----------------------------------------------------------------
+   TABLET STYLES  (768px – 1023px)
+   Adjust layouts that are too cramped at this size.
+----------------------------------------------------------------- */
+@media (max-width: 1023px) {
+ 
+  /* Hero: stack text and photo vertically on tablet */
+  .hero {
+    flex-direction: column; /* Change from row to column */
+    text-align: center;
+    padding-top: var(--space-lg);
+  }
+ 
+  .hero-description {
+    margin: 0 auto var(--space-md); /* Center the description */
+  }
+ 
+  .hero-buttons {
+    justify-content: center;
+  }
+ 
+  .profile-photo {
+    width: 260px;
+    height: 260px;
+  }
+ 
+  /* Skills: 2 columns on tablet */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  /* Projects: still 2 columns (fine on tablet) */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+}
+ 
+ 
+/* -----------------------------------------------------------------
+   MOBILE STYLES  (up to 767px)
+   Everything becomes single-column and larger touch targets.
+----------------------------------------------------------------- */
+@media (max-width: 767px) {
+ 
+  /* --- Mobile Navigation --- */
+ 
+  /* HIDE the normal horizontal nav links on mobile */
+  .nav-links {
+    /* Change from flex row to vertical dropdown */
+    flex-direction: column;
+    position: absolute;   /* Remove from document flow */
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 26, 0.98);
+    padding: var(--space-md);
+    gap: var(--space-sm);
+    border-bottom: 1px solid var(--color-border);
+ 
+    /* Hidden off-screen by default */
+    transform: translateY(-110%);
+    transition: transform 0.4s ease;
+    z-index: 999;
+  }
+ 
+  /* When JavaScript adds .open class, slide the menu down into view */
+  .nav-links.open {
+    transform: translateY(0);
+  }
+ 
+  /* SHOW the hamburger icon on mobile */
+  .hamburger {
+    display: flex;
+  }
+ 
+  /* Larger tap target for nav links */
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+ 
+  /* --- Mobile Hero --- */
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+ 
+  /* --- Mobile About --- */
+  /* Stack image and text vertically */
+  .about-grid {
+    grid-template-columns: 1fr; /* Single column */
+  }
+ 
+  /* Stack the about-details list into single column too */
+  .about-details {
+    grid-template-columns: 1fr;
+  }
+ 
+  /* --- Mobile Skills: 1 column --- */
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+  /* --- Mobile Projects: 1 column --- */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+  /* --- Mobile Contact: stack form on top of info --- */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+}
+/* End of Responsive Media Queries */
+ 
+
