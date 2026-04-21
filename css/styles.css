@@ -533,187 +533,74 @@ h1, h2, h3, h4 {
    - CSS Grid: form on left, info on right
 ================================================================ */
  
-.contact {
-  padding: var(--space-xl) var(--space-md);
+/* =====================
+   CONTACT SECTION
+   ===================== */
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 90%;
+    max-width: 45rem;
+    margin: 0 auto;
+     background-color: rgb(22, 89, 212);
+    padding: 2rem 1rem;
+    border-radius: 15px;
+
 }
- 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr; /* Form column slightly wider */
-  gap: var(--space-lg);
-  max-width: 1100px;
-  margin: 0 auto;
-  align-items: start; /* Align to the top (not stretched) */
+.contact label{
+     color: #512e2e;
+     font-size: 0.9rem;
+     font-weight: 600;
 }
- 
-/* --- Contact Form --- */
-.contact-form-wrapper {
-  background-color: var(--color-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  padding: var(--space-lg);
+.first-last,
+.email-course {
+    display: grid; /* Use CSS Grid */
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1rem;
 }
- 
-/* Each label + input pair */
-.form-group {
-  margin-bottom: var(--space-md);
+.comments{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
- 
-.form-group label {
-  display: block;           /* Label takes full width above the input */
-  color: var(--color-text);
-  font-weight: 600;
-  margin-bottom: 8px;
-  font-size: 0.9rem;
+.contact form input,
+.contact form select {
+    outline: 0;
+    height: 2.5rem;
+    border-radius: 5rem;
+    padding: 00.5rem;
+    text-align: center;
+    border: 1px solid black;
+
 }
- 
-/* Shared styles for <input> and <textarea> */
-.form-group input,
-.form-group textarea {
-  width: 100%;              /* Fill the form column */
-  padding: 0.85rem 1rem;
-  background-color: var(--color-bg-alt);
-  border: 2px solid var(--color-border);
-  border-radius: 8px;
-  color: var(--color-white);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  transition: border-color var(--transition);
- 
-  /* Removes the browser's default blue outline */
-  outline: none;
+.contact textarea {
+    min-height: 7rem; /* Minimum height of 112px */
+    padding: 0.5rem; /* 8px padding on all sides */
+    border-radius: 6px; /* Rounded corners */
 }
- 
-/* Placeholder text style */
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: var(--color-text-muted);
+.contact button {
+    background-color: rgb(29, 28, 28);
+    border-radius: 15rem;
+    border: 1px solid black;
+    padding: 0.9rem 3rem;
+    align-self: flex-start;
+    cursor: pointer;
+    font-weight: 600;
+
 }
- 
-/* When the user clicks on a field (focus state), highlight the border */
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--color-accent);
+.contact button:hover {
+  background-color: #007acc;
+    filter: brightness(0.9); /* Darken button to 90% brightness on hover */
 }
- 
-/* Disable the resize handle on the textarea (looks cleaner) */
-.form-group textarea {
-  resize: vertical;  /* Allow only vertical resize */
-  min-height: 140px;
-}
- 
-/* --- Contact Info Side --- */
-.contact-info h3 {
-  font-size: 1.8rem;
-  color: var(--color-white);
-  margin-bottom: var(--space-sm);
-}
- 
-.contact-info > p {
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-lg);
-}
- 
-/* Individual contact detail row (icon + text) */
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  margin-bottom: var(--space-lg);
-}
- 
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-sm);
-}
- 
-/* Circular icon container */
-.contact-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: rgba(233, 69, 96, 0.1);
-  border: 1px solid rgba(233, 69, 96, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent);
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
- 
-.contact-item h4 {
-  color: var(--color-white);
-  font-size: 0.9rem;
-  margin-bottom: 2px;
-}
- 
-.contact-item p {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-}
- 
-/* Social links section */
-.social-links h4 {
-  color: var(--color-white);
-  margin-bottom: var(--space-sm);
-}
- 
-/* Row of circular social icon buttons */
-.social-icons {
-  display: flex;
-  gap: var(--space-sm);
-}
- 
-.social-icons a {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--color-card);
-  border: 1px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
-  font-size: 1rem;
-  transition: all var(--transition);
-}
- 
-/* On hover: fill with accent color and lift */
-.social-icons a:hover {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-white);
-  transform: translateY(-4px);
-}
- 
- 
-/* ================================================================
-   9. FOOTER
-   - Simple centered footer at the bottom of the page
-================================================================ */
- 
-.footer {
-  background-color: var(--color-bg-alt);
-  border-top: 1px solid var(--color-border);
-  padding: var(--space-lg) var(--space-md);
-  text-align: center;
-}
- 
-.footer p {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-}
- 
-.footer p strong {
-  color: var(--color-accent);
-}
- 
-.footer-sub {
-  margin-top: var(--space-xs);
-  font-size: 0.8rem;
-}
+
+footer {
+    background-color: rgb(45, 31, 69);
+    color: #f6f6f6;
+    padding: 5rem 0;
+    text-align: center;
+    }
  
  
 /* ================================================================
@@ -733,45 +620,8 @@ h1, h2, h3, h4 {
    TABLET STYLES  (768px – 1023px)
    Adjust layouts that are too cramped at this size.
 ----------------------------------------------------------------- */
-@media (max-width: 1023px) {
- 
-  /* Hero: stack text and photo vertically on tablet */
-  .hero {
-    flex-direction: column; /* Change from row to column */
-    text-align: center;
-    padding-top: var(--space-lg);
-  }
- 
-  .hero-description {
-    margin: 0 auto var(--space-md); /* Center the description */
-  }
- 
-  .hero-buttons {
-    justify-content: center;
-  }
- 
-  .profile-photo {
-    width: 260px;
-    height: 260px;
-  }
- 
-  /* Skills: 2 columns on tablet */
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
- 
-  /* Projects: still 2 columns (fine on tablet) */
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
- 
-}
- 
- 
-/* -----------------------------------------------------------------
-   MOBILE STYLES  (up to 767px)
-   Everything becomes single-column and larger touch targets.
------------------------------------------------------------------ */
+
+
 @media (max-width: 767px) {
  
   /* --- Mobile Navigation --- */
@@ -843,8 +693,165 @@ h1, h2, h3, h4 {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+  .contact > div:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  .social-links {
+    position: static;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Textarea */
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--clr-input-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  color: var(--clr-text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  resize: vertical;
+  min-height: 140px;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  box-sizing: border-box;
+}
+
+textarea::placeholder {
+  color: var(--clr-text-muted);
+  opacity: 0.6;
+}
+
+textarea:focus {
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 0 3px var(--clr-accent-dim);
+}
+
+/* Submit button */
+button[type="submit"] {
+  align-self: flex-start;
+  padding: 0.75rem 2.2rem;
+  background: var(--clr-accent);
+  color: #0d0d0d;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+button[type="submit"]:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* ── RIGHT SIDEBAR (contact info + social) ── */
+.social-links {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 2rem;
+}
+
+.social-links h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--clr-text-primary);
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+/* Social icon row */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+
+@media (max-width: 1023px) {
+ 
+  /* Hero: stack text and photo vertically on tablet */
+  .hero {
+    flex-direction: column; /* Change from row to column */
+    text-align: center;
+    padding-top: var(--space-lg);
+  }
+  
+  /* --- Hamburger Menu Button (visible only on mobile) ---
+   Three <span> tags become three horizontal lines. */
+.hamburger {
+  display: none;  /* Hidden on desktop — shown via media query on mobile */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+ 
+.hamburger span {
+  display: none;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-white);
+  border-radius: 3px;
+  transition: all var(--transition);
+}
+ 
+ 
+  .hero-description {
+    margin: 0 auto var(--space-md); /* Center the description */
+  }
+ 
+  .hero-buttons {
+    justify-content: center;
+  }
+ 
+  .profile-photo {
+    width: 260px;
+    height: 260px;
+  }
+ 
+  /* Skills: 2 columns on tablet */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  /* Projects: still 2 columns (fine on tablet) */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
  
 }
-/* End of Responsive Media Queries */
  
-
+ 
+/* -----------------------------------------------------------------
+   MOBILE STYLES  (up to 767px)
+   Everything becomes single-column and larger touch targets.
+----------------------------------------------------------------- */

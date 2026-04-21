@@ -25,6 +25,8 @@
  
      </nav>
   </header>
+
+<main>
  <section class="hero">
     
     <div class="hero-text">
@@ -253,82 +255,35 @@
         Have a project in mind or just want to say hello? Send me a message!
       </p>
     </div>
- 
-    <!-- Two-column grid: form + info -->
-    <div class="contact-grid">
- 
-      <!-- LEFT: Contact Form -->
-      <div class="contact-form-wrapper">
-        <!-- 
-          <form> is the semantic HTML tag for forms.
-          action="#" means the form doesn't submit anywhere (no backend yet).
-          method="POST" is what we'd use in a real form.
-          novalidate lets us style our own validation later.
-        -->
-        <form class="contact-form" action="#" method="POST" novalidate>
- 
-         <div>
-          <label for="fullname">Full Name</label>
-          <input type="text" placeholder="Enter your fullname" id="fullname">
-         </div>
-          <div>
-            <label for="email">Email Address</label>
-            <input type="email" placeholder="Cj@example.com" id="email">
-          </div>
- 
-          <label for="subject">Subject</label>
-          <input type="text" placeholder="what`s the title?">
- 
-          <!-- Message Field -->
-          <div>
-            <label for="message">Message</label>
-            
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Write your message here..."
-              required
-            ></textarea>
-          </div>
- 
-          <!-- Submit Button -->
-          <!-- type="submit" tells the browser this button submits the form -->
-          <button type="submit" class="btn btn-primary btn-full">
-            <i class="fa-solid fa-paper-plane"></i> Send Message
-          </button>
- 
-        </form>
-      </div>
- 
-      <!-- RIGHT: Contact Info + Social Links -->
-      <div class="contact-info">
- 
-        <h3>Let's Connect</h3>
- 
-        <!-- Contact detail items -->
-        <div class="contact-details">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-            <div>
-              <h4>Email</h4>
-              <p>cjnnekwelugo@gmail.com</p>
-            </div>
-          </div>
- 
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-            <div>
-              <h4>Location</h4>
-              <p>Enugu State, Nigeria</p>
-            </div>
-          </div>
- 
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
-           
-          </div>
-        </div>
+ <form>
+    <div class="first-last">
+        <div>
+        <label for="fname">Fullname</label>
+        <input type="text" placeholder="Fullname" id="fname">
+    </div>
+    
+    <div class="email-course">
+        <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="example@mail.com">
+    </div>
+    
+    <div class="comments">
+      <label for="massage">Message</label>
+        <textarea name="message" id="comments" placeholder="Enter your messages here...."></textarea>
+    </div>
+
+    <button type="submit">submit</button>
+    
+    
+    
+    
+    
+    
+    
+    
+    </form>
+    
  
         <!-- Social Media Links -->
         <div class="social-links">
@@ -360,5 +315,13 @@
 
 
  </section>
+</main> 
+
+ 
+  <footer>
+  &copy;Cj Nnekwelugo|Alright Reserved 2026.
+ </footer>
+
+
 </body>
 </html>
