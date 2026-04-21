@@ -80,7 +80,7 @@ h1, h2, h3, h4 {
     position: sticky;
     top: 0%;
     z-index: 1000;
-     background-color: rgba(197, 197, 253, 0.95);
+     background-color: rgba(4, 4, 200, 0.95);
      backdrop-filter: blue;
      border-bottom: 1px solid blue;
      
@@ -95,11 +95,30 @@ h1, h2, h3, h4 {
     margin: 0 auto;
  }
  
- 
-
-.nav-logo span {
-  
+.nav-logo {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 2rem;
 }
+
+.nav-logo span:nth-child(1) {
+    background-color: blue;
+    color: rgb(10, 1, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.nav-logo span:nth-child(2) {
+    font-weight: 600;
+} 
+
+
 
 .nav-links {
   display: flex;
@@ -213,38 +232,67 @@ h1, h2, h3, h4 {
 
 /* Grid container */
 .about {
-  padding: 40px;
-}
-.about h2{
-  display: flex;
-  justify-content: center;
-  font-size: 300%;
-}
-
-/* Grid container */
-.about-text {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  gap: 30px; /* Space between text and image */
-  align-items: center; /* Align items vertically */
-}
-
-/* Text styling */
-.about-text p {
-  margin-bottom: 15px;
-  line-height: 1.6;
-  font-size: 16px;
-}
-
-/* Image styling */
-.about img {
-   width: 500px;
-  height: 600px;
+ margin-top: 5rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
   
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-top: 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- Left column: image --- */
+.about-image img {
+  margin-top: 5rem;
+  padding: 2rem;
+  width: 500px;
+  height: 600px; 
   border: 5px solid var(--color-accent);
   box-shadow: 0 0 40px rgba(81, 81, 175, 0.3);
   animation: float 4s ease-in-out infinite;
 }
+
+/* --- Right column: text --- */
+.about-text h3,p {
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+  align-items: center;
+  padding: 2rem;
+
+  
+}
+
+
+
+/* Quick info list (location, email, etc.) */
+.about-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xs) var(--space-sm);
+  margin: var(--space-md) 0;
+}
+
+.about-details li {
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.about-details li i {
+  color: var(--color-accent);
+  width: 18px; /* Fixed width keeps icons aligned */
+}
+
+
 /* ================================================================
    6. SKILLS SECTION
    - CSS Grid: 4 columns on desktop
@@ -256,16 +304,14 @@ h1, h2, h3, h4 {
   max-width: 1200px;
   margin: 0 auto;
   top: 5rem;
+  margin-top: 5rem;
 }
-.skills h2{
+.skills h2, p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 300%;
-}
-.section-header p {
-  align-items: center;
-  font-size: 100%;
+  margin-top: 2rem;
+  
 }
  
 /* 4-column grid that auto-adjusts */
@@ -274,6 +320,7 @@ h1, h2, h3, h4 {
   grid-template-columns: repeat(4, 1fr);
   /* repeat(4, 1fr) = 4 equal-width columns */
   gap: var(--space-md);
+  margin-top: 4rem;
 }
  
 /* Individual skill card */
@@ -291,7 +338,7 @@ h1, h2, h3, h4 {
 /* Hover state: lift the card and add a colored border glow */
 .skill-card:hover {
   transform: translateY(-8px);   /* Move card up 8px */
-  box-shadow: 0 12px 30px rgba(233, 69, 96, 0.15);
+  box-shadow: 0 12px 30px rgba(37, 3, 187, 0.15);
   border-color: var(--color-accent);
 }
  
@@ -302,19 +349,19 @@ h1, h2, h3, h4 {
   display: block;
 }
  
-/* Individual icon colors (brand colors) */
+
 .html     { color: #e34c26; }  /* HTML5 orange */
 .css      { color: #264de4; }  /* CSS3 blue */
 .flexbox  { color: #38bdf8; }  /* Light blue */
 .grid     { color: #a78bfa; }  /* Purple */
-.git      { color: #f14e32; }  /* Git orange-red */
+.git      { color: #f34a2c; }  /* Git orange-red */
 .github   { color: #ffffff; }  /* White */
 .vscode   { color: #007acc; }  /* VS Code blue */
 .responsive { color: #34d399; }/* Green */
  
 .skill-card h3 {
-  color: var(--color-white);
-  font-size: 1rem;
+  color: rgb(75, 75, 110);
+  font-size: 1.5rem;
   margin-bottom: 6px;
 }
  
@@ -332,14 +379,23 @@ h1, h2, h3, h4 {
 ================================================================ */
  
 .projects {
-  background-color: var(--color-bg-alt);
-  padding: var(--space-xl) var(--space-md);
-}
- 
+  background-color: #90aabc;
+  margin-top: 5rem;
+  }
+
+
+ .section-header  h2, p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  }
+
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-  gap: var(--space-md);
+  margin-top: 4rem;
   max-width: 1100px;
   margin: 0 auto;
 }

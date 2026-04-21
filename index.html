@@ -49,8 +49,19 @@
   </section>
  <section class="about">
     <h2>About me</h2>
-     <div class="about-text">
- 
+     
+
+    <!-- Two-column layout: image + text -->
+    <div class="about-grid">
+
+      <!-- Left column: photo -->
+      <div class="about-image">
+        <img src="./images/my profolio image.jpeg" alt="This is Nnekwelugo Chijioke">
+      </div>
+
+      <!-- Right column: paragraphs about yourself -->
+      <div class="about-text">
+        <h3>Who Am I?</h3>
         <p>
           Hi! My name is Nnekwelugo Chijioke and I'm currently on an exciting journey
           learning web development. I have always been fascinated by how
@@ -72,7 +83,7 @@
           within the next year year.
         </p>
       </div>
-    <img src="./images/my profolio image.jpeg" alt="This is Nnekwelugo Chijioke">
+    
 
 
  </section>
@@ -80,7 +91,7 @@
  <section class="skills">
     <div class="section-header">
       <h2>My Skills</h2>
-      <p>Technologies and tools I've been learning</p>
+      <p>Technologies and tools I've been learning and progressing on-</p>
     </div>
  
     <!-- Skills grid — each .skill-card is one technology -->
@@ -140,9 +151,8 @@
 
  <section class="projects">
     <div class="section-header">
-      <h2>My <span>Projects</span></h2>
-      <div class="underline"></div>
-      <p class="section-subtitle">Things I'm building next/Soon</p>
+      <h2>My Projects</h2>
+      <p>Websites i will be building soon as i progress </p>
     </div>
 
     <div class="projects-grid">
@@ -238,9 +248,8 @@
 </section>
  <section class="contact">
      <div class="section-header">
-      <h2>Get In <span>Touch</span></h2>
-      <div class="underline"></div>
-      <p class="section-subtitle">
+      <h2>Get In Touch</h2>
+      <p>
         Have a project in mind or just want to say hello? Send me a message!
       </p>
     </div>
@@ -258,57 +267,22 @@
         -->
         <form class="contact-form" action="#" method="POST" novalidate>
  
-          <!-- Name Field -->
-          <div class="form-group">
-            <!-- 
-              <label> describes what the input is for.
-              for="name" links this label to the input with id="name".
-              This is important for accessibility.
-            -->
-            <label for="name">Full Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your full name"
-              required
-            />
-          </div>
- 
-          <!-- Email Field -->
-          <div class="form-group">
+         <div>
+          <label for="fullname">Full Name</label>
+          <input type="text" placeholder="Enter your fullname" id="fullname">
+         </div>
+          <div>
             <label for="email">Email Address</label>
-            <!-- 
-              type="email" tells the browser this should be an email address.
-              Mobile keyboards will show @ symbol. Browser validates the format.
-            -->
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Cjesco@example.com"
-              required
-            />
+            <input type="email" placeholder="Cj@example.com" id="email">
           </div>
  
-          <!-- Subject Field -->
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="What is this about?"
-            />
-          </div>
+          <label for="subject">Subject</label>
+          <input type="text" placeholder="what`s the title?">
  
           <!-- Message Field -->
-          <div class="form-group">
+          <div>
             <label for="message">Message</label>
-            <!-- 
-              <textarea> is a multi-line text input.
-              rows="5" sets its default visible height.
-            -->
+            
             <textarea
               id="message"
               name="message"
