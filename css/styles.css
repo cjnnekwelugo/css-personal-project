@@ -1,11 +1,9 @@
-
-
-/* ============================================================
-   1. GOOGLE FONTS & CSS VARIABLES
-   — Merriweather is already imported in the <head>.
-   — Adding Nunito as the clean body/UI font.
-============================================================ */
-
+/*RESET*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 
 body {
@@ -15,7 +13,7 @@ body {
   line-height: 1.75;
 }
 
-/* Shared section heading styles */
+
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   color: var(--color-dark);
@@ -50,9 +48,6 @@ img {
   display: inline-block;
 }
 
-/* Red underline accent beneath every section heading */
-
-
 .section-header p {
   font-size: 1rem;
   font-weight: 300;
@@ -61,10 +56,7 @@ img {
 }
 
 
-/* ============================================================
-   3. NAVIGATION BAR
-   — Sticky top bar; logo left, links right via Flexbox
-============================================================ */
+/*NAVIGATION BAR*/
 
 header {
   position: sticky;
@@ -84,7 +76,7 @@ header {
   padding: 1rem 2rem;
 }
 
-/* Logo — two spans styled differently */
+/* Logo — two spans I styled differently */
 .nav-logo {
    display: flex;
     gap: 0.5rem;
@@ -138,13 +130,10 @@ header {
 
 
 
-/* ============================================================
-   4. HERO SECTION
-   — Full-viewport intro with name, tagline, photo, CTA button
-============================================================ */
+/*HERO SECTION */
 
 .hero {
-  min-height: calc(100vh - 70px);      /* fill remaining viewport below navbar  */
+  min-height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -152,33 +141,23 @@ header {
   text-align: center;
   padding: 5rem 2rem 4rem;
   background-color: var(--color-dark);
-  color: #f0ece4;
+  color: #4a3203;
   position: relative;
   overflow: hidden;
 }
 
-/* Subtle decorative background circle */
-
-/* Hero text block */
 .hero-text {
   max-width: 700px;
   margin-bottom: 2.5rem;
 }
 
-.hero-text p:first-child {
-  font-size: 1rem;
-  font-weight: 300;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 0.5rem;
-}
 
-.hero-text h1 {
+
+.hero-text h1,p {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 5vw, 3.4rem);
   font-weight: 700;
-  color: #f0ece4;
+  color: #e90752;
   margin-bottom: 0.75rem;
   line-height: 1.2;
 }
@@ -186,14 +165,14 @@ header {
 .hero-text p:nth-child(3) {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #c8a96e;                      /* warm gold for the tagline subtitle    */
+  color: #ed060e;                      /* warm gold for the tagline subtitle    */
   margin-bottom: 1rem;
 }
 
 .hero-text p:last-child {
   font-size: 1rem;
   font-weight: 300;
-  color: #9e9a94;
+  color: #de238a;
   line-height: 1.8;
   max-width: 520px;
   margin: 0 auto;
@@ -226,26 +205,20 @@ header {
   background-color: #007acc;
 }
 
-/* ============================================================
-   5. ABOUT SECTION
-   — Two-column CSS Grid: photo left, text right
-============================================================ */
+/* ABOUT SECTION */
 
 .about {
-  padding: var(--section-padding);
-  max-width: 1100px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 7rem;
+  
 }
 
-.about > h2 {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 700;
+.about h2 {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  margin-bottom: 3.5rem;
-  position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 
@@ -255,7 +228,8 @@ header {
   display: grid;
   grid-template-columns: 1fr 1.5fr;   /* image narrower, text wider            */
   gap: 4rem;
-  align-items: start;
+  align-items: center;
+
 }
 
 /* About photo */
@@ -267,6 +241,7 @@ header {
   border: 3px solid var(--color-accent);
   box-shadow: 0 0 40px rgba(81, 81, 175, 0.3);
   animation: float 4s ease-in-out infinite;
+  margin-top: 4rem;
 }
 
 /* About text block */
@@ -296,6 +271,7 @@ header {
 .skills {
   padding: var(--section-padding);
   background-color: var(--color-dark);  /* dark band to break up the page       */
+  margin-top: 7rem;
 }
 
 .skills .section-header h2 {
