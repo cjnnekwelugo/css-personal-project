@@ -4,8 +4,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-
 body {
    font-family: "Merriweather", serif;
   color: var(--color-text);
@@ -16,24 +14,18 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-
-
 h1, h2, h3, h4 {
   
   color: var(--color-dark);
   line-height: 1.3;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 ul {
   list-style: none;
 }
-
 img {
   display: block;
   max-width: 100%;
@@ -209,7 +201,7 @@ header {
     margin-top: 2rem;
   display: flex;
   gap: var(--space-sm);
-  flex-wrap: wrap; /* Wraps to next line on small screens */
+  flex-wrap: wrap; 
 }
 .hero button {
   background-color: rgb(144, 144, 238);
@@ -238,12 +230,10 @@ header {
   text-align: center;
 }
 
-
-
 /* CSS Grid: image | text */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;   /* image narrower, text wider            */
+  grid-template-columns: 1fr 1.5fr; 
   gap: 4rem;
   align-items: center;
 
@@ -260,16 +250,12 @@ header {
   animation: float 4s ease-in-out infinite;
   margin-top: 4rem;
 }
-
-/* About text block */
 .about-text h3 {
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--color-dark);
   margin-bottom: 1.25rem;
 }
-
-
 .about-text p {
   font-size: 0.97rem;
   color: var(--color-text);
@@ -280,23 +266,17 @@ header {
 
 
 
-/* ============================================================
-   6. SKILLS SECTION
-   — CSS Grid cards with icons and hover lift effects
-============================================================ */
+/* SKILLS SECTION */
 
 .skills {
   padding: var(--section-padding);
-  background-color: var(--color-dark);  /* dark band to break up the page       */
+  background-color: var(--color-dark);
   margin-top: 7rem;
 }
 
 .skills .section-header h2 {
-  color: #0e0d0d;                        /* white heading on dark background     */
+  color: #0e0d0d;
 }
-
-
-
 .skills .section-header p {
   color: #9e9a94;
 }
@@ -312,18 +292,17 @@ header {
 
 /* Individual skill card */
 .skill-card {
-  background: #242438;                  /* slightly lighter than dark bg        */
+  background: #242438;
   border: 1px solid #3a3a52;
   border-radius: var(--radius-md);
   padding: 2rem 1.25rem 1.5rem;
   text-align: center;
-  transition: transform var(--transition), border-color var(--transition),
-              box-shadow var(--transition);
+  transition: transform var(--transition),var(--transition)box-shadow var(--transition);
   cursor: default;
 }
 
 .skill-card:hover {
-  transform: translateY(-6px);          /* lift on hover                        */
+  transform: translateY(-6px);                           
   border-color: var(--color-accent);
   box-shadow: 0 8px 24px rgba(192,57,43,0.2);
 }
@@ -358,10 +337,7 @@ header {
 }
 
 
-/* ============================================================
-   7. PROJECTS SECTION
-   — CSS Grid, image overlay on hover, status badges, tech tags
-============================================================ */
+/* PROJECTS SECTION */
 
 .projects {
   padding: var(--section-padding);
@@ -377,7 +353,6 @@ header {
   gap: 2rem;
 }
 
-/* Project card wrapper */
 .project-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -391,7 +366,6 @@ header {
   box-shadow: 0 16px 40px rgba(0,0,0,0.12);
 }
 
-/* Image container — position:relative to anchor the overlay */
 .project-image {
   position: relative;
   overflow: hidden;
@@ -406,13 +380,9 @@ header {
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.06);              /* subtle zoom on card hover             */
+  transform: scale(1.06);                    
 }
 
-
-
-
-/* Project info block below the image */
 .project-info {
   padding: 1.5rem 1.5rem 1.75rem;
 }
@@ -477,13 +447,7 @@ header {
 }
 
 
-/* ============================================================
-   8. CONTACT SECTION
-   — CSS Grid: form on left, social sidebar on right
-   — NOTE: The HTML has class=".contact-grid" (with a dot, which
-     is a typo). The selector below uses the attribute selector
-     to target it. Also targeting .contact-grid for if you fix it.
-============================================================ */
+/* CONTACT SECTION */
 
 .contact {
   padding: var(--space-xl) var(--space-md);
@@ -491,11 +455,11 @@ header {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr; /* Form column slightly wider */
+  grid-template-columns: 1.2fr 1fr;
   gap: var(--space-lg);
   max-width: 1100px;
   margin: 0 auto;
-  align-items: start; /* Align to the top (not stretched) */
+  align-items: start;
 }
 
 /* ── Contact Form ── */
@@ -524,7 +488,7 @@ label {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-muted);
+  color: #14141a;
 }
 
 /* Text inputs */
@@ -589,8 +553,7 @@ button[type="submit"] {
   border: 2px solid var(--color-accent);
   border-radius: 2rem;
   cursor: pointer;
-  transition: background var(--transition), color var(--transition),
-              transform var(--transition);
+  transition: background var(--transition), color var(--transition),transform var(--transition);
 }
 
 button[type="submit"]:hover {
@@ -605,8 +568,7 @@ button[type="submit"]:hover {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
- 
-  top: 90px;                           /* sticks just below the sticky navbar   */
+  top: 90px;
 }
 
 .social-links h4 {
@@ -634,10 +596,7 @@ button[type="submit"]:hover {
 }
 
 
-/* ============================================================
-   9. FOOTER
-   — Simple, centered, dark background
-============================================================ */
+/* FOOTER */
 
 footer {
   background-color: rgb(96, 97, 121);
@@ -650,50 +609,7 @@ footer {
   letter-spacing: 0.03em;
   border-top: 1px solid #2a2a3e;
 }
-
-
-/* ============================================================
-   10. RESPONSIVE — TABLET (768px – 1023px)
-============================================================ */
-
-@media (max-width: 1023px) {
-
-  /* About: stack to single column on tablet */
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .about-image img {
-    max-width: 280px;
-    margin: 0 auto;
-  }
-
-  /* Skills: 2 columns on tablet */
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Projects: stay 2-col on tablet, reduce gap */
-  .projects-grid {
-    gap: 1.5rem;
-  }
-
-  /* Contact grid: stack on tablet */
-  [class=".contact-grid"],
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .social-links {
-    position: static;
-  }
-}
-
-
-/* ============================================================
-   11. RESPONSIVE — MOBILE (320px – 767px)
-============================================================ */
+/* RESPONSIVE — MOBILE (320px – 767px) */
 
 @media (max-width: 767px) {
 
@@ -751,8 +667,11 @@ footer {
   /* --- About --- */
   .about {
     padding: 4rem 1.25rem;
+    
   }
-
+  .about img image{
+     margin-top: 20px;
+  }
   /* --- Skills: 1 column on small mobile, 2 on larger --- */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -787,3 +706,41 @@ footer {
     max-width: 100%;
   }
 }
+
+/* RESPONSIVE — DESKTOP (768px – 1023px) */
+
+@media (max-width: 1023px) {
+
+  /* About: stack to single column on tablet */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-image img {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  /* Skills: 2 columns on tablet */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Projects: stay 2-col on tablet, reduce gap */
+  .projects-grid {
+    gap: 1.5rem;
+  }
+
+  /* Contact grid: stack on tablet */
+  [class=".contact-grid"],
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-links {
+    position: static;
+  }
+}
+
+
