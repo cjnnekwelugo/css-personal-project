@@ -415,7 +415,7 @@ header {
 
 .project-status.coming-soon {
   background: #fff3cd;
-  color: #856404;
+  color: #d1141d;
 }
 
 .project-status.in-progress {
@@ -638,7 +638,7 @@ footer {
   }
 
   .nav-links.nav-open {
-    display: flex;                     /* shown when hamburger is clicked       */
+    display: flex; 
   }
 
   .nav-links li {
